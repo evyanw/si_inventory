@@ -69,4 +69,11 @@ class KategoriController extends Controller
         return redirect()->route('kategori.index')->with(['success' => 'Data Kategori Berhasil Dihapus!']);
     }
 
+    function kategoriAPI(){
+        $kategori = Kategori::all();
+        $data = array("data"=>$kategori);
+
+        return response()->json($data);
+    }
+
 }
